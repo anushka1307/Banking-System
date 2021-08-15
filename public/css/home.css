@@ -1,0 +1,271 @@
+body {
+  overflow-x: hidden;
+  background-color: #27496d;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.5s;
+  z-index: 5;
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  /* padding: 15px; */
+  text-decoration: none;
+}
+
+/* #navbar a:hover {
+  background-color: #ddd;
+  color: black;
+} */
+/***************************NAVBAR*******************************************/
+.header {
+  background-color: #FFF;
+}
+
+.logo h1 {
+  color: #000000;
+  margin-top: 30%;
+  margin-left: 60%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menu {
+  margin-right: 10%;
+  margin-top: 3%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menu li {
+  letter-spacing: 2px;
+  float: right;
+  display: inline;
+  margin-right: 2%;
+}
+
+.options h3 {
+  color: black;
+}
+
+.animation {
+  display: inline-block;
+  position: relative;
+  color: #27496d;
+  padding-bottom: 10px;
+}
+
+.animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #27496d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.carousel-item {
+  padding: 150px;
+}
+
+.carousel-inner {
+  background-color: #ffc93c;
+  margin-top: 13%;
+  margin-left: 12%;
+  height: 400px;
+  width: 75%;
+}
+
+.carousel-control-prev {
+  margin-top: 3%;
+  margin-left: 10%;
+}
+
+.carousel-control-next {
+  margin-top: 3%;
+  margin-right: 11%;
+}
+
+#facilities {
+  background-color: #FFF;
+  position: relative;
+}
+
+.transfer {
+  text-align: center;
+}
+
+.view {
+  text-align: center;
+}
+
+.accounts {
+  text-align: center;
+}
+
+.facility-box {
+  padding: 40px;
+  width: 10px;
+}
+
+.block {
+  background-color: #ffc93c;
+  margin-top: 12%;
+  \
+
+}
+
+.icon {
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 40px;
+}
+
+.button {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  box-shadow: 0 0 40px 40px #FFF inset;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:focus {
+  background-color: #FFF;
+}
+
+.btn a {
+  text-decoration: none;
+  color: black;
+}
+/***************************POPUP**************************/
+.popup .content {
+  margin-top: 500px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -150%) scale(0);
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: #FFF;
+  z-index: 4;
+}
+
+.transfer-money {
+  width: 400px;
+  height: 400px;
+}
+.deposit {
+  width: 400px;
+  height: 600px;
+}
+.credit-card {
+  width: 400px;
+  height: 580px;
+}
+.exchange {
+  width: 400px;
+  height: 400px;
+}
+.content h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  color: #bfc0c0;
+}
+
+.content a {
+  font-weight: 600;
+  color: white;
+}
+
+.input-field .validate {
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  color: #bfc0c0;
+  background: #FFFFFF;
+  box-shadow: inset 5px 5px 5px #F5F5F5,
+    inset -5px -5px 5px #F5F5F5;
+  outline: none;
+}
+
+.second-button {
+  color: #bfc0c0;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  padding: 20px 30px;
+  border-radius: 40px;
+  border: none;
+  background: #FFFFFF;
+  box-shadow: 8px 8px 15px #F5F5F5,
+    -8px -8px 15px #F5F5F5;
+  transition: box-shadow .35s ease !important;
+  outline: none;
+}
+
+.second-button:active {
+  background: linear-gradient(145deg, #222222, #292929);
+  box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+  border: none;
+  outline: none;
+}
+
+.content p {
+  color: #bfc0c0;
+  padding: 20px;
+}
+
+.popup.active .content {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup .close-btn {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  color: #bfc0c0;
+  font-size: 19px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 5px 5px 15px #F5F5F5,
+    -5px -5px 15px #F5F5F5;
+  cursor: pointer;
+}
+
+.whole#blur.active {
+  filter: blur(15px);
+}

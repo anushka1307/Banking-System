@@ -1,0 +1,130 @@
+<%- include("partials/header"); -%>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> -->
+<div class="sign-in">
+  <div class="sign-in-box">
+    <form class="" action="/signIn" method="post">
+    <div class="log-in1">
+      <div class="members1">
+        <h4>NEW MEMBERS</h4>
+      </div>
+      <input placeholder="First Name" class="validate" name = "fname">
+      <input placeholder="Last Name" class="validate" name = "lname">
+      <input type="email" placeholder="Email" class="validate" name="username">
+      <input type="password" placeholder="Password" class="validate" name = "password">
+      <button type="submit" name="submit">SIGN UP</button>
+    </div>
+    </form>
+    <p class="para1">
+      Already have an account? <br>
+      <span><button onclick="togglePopup()" type="button" name="button" class="new-account"><a href="/">Log in here</a></button></span>
+    </p>
+    <!-- <p class="para2">Create an account</p> -->
+  </div>
+  <div class="slogan">
+    <h2><span class="first">The</span><br><span class="second">Next Stage</span><br><span class="third">In Banking.</span></h2>
+  </div>
+  <img src="https://www.nttdata.com/au/en/-/media/nttdataapac/ndau/industries/banking-and-financial-services/banking-and-financial-services-header-2732x1536.jpg" alt="bank.png">
+</div>
+
+<div class="card-carousel">
+  <div class="my-card">
+    <img src="https://www.hsbc.com/-/files/hsbc/who-we-are/mobile-images/our-climate-strategy-mangroves-768x576.jpg" alt="">
+    <h3>Our climate strategy</h3>
+    <p>We’re mobilising finance and accelerating innovation to help drive the transition to a global net zero economy.</p>
+  </div>
+  <div class="my-card">
+    <img src="https://www.hsbc.com/-/files/hsbc/who-we-are/digital-banking/thumbnail-images/080221-digital-banking-768x576.jpg" alt="">
+    <h3>Digital banking</h3>
+    <p>We are investing in innovative technology to make banking for customers easier and more secure.</p>
+  </div>
+  <div class="my-card" id="card">
+    <img src="https://www.hsbc.com/-/files/hsbc/campaigns/201126-global-perspectives-768x576.jpg" alt="">
+    <h3>Global perspectives</h3>
+    <p>Sign up to receive insight and analysis on the latest trends from executives, economists and experts – direct to your inbox.</p>
+  </div>
+</div>
+
+<section id="CTA">
+  <div class="contact">
+    <h4 style = "margin-right: 70px;">Mail us at:</h4>
+    <h2><a href="mailto:hello@bank.com?subject=feedback">hello@bank.com</a></h2>
+    <h3 style = "margin-right: 70px;">Download our app</h3>
+    <button type="button" class="btn btn-lg download-button" style= "margin-left: 35%;"><i class="fab fa-apple"></i> Download</button>
+    <button type="button" class="btn btn-lg download-button"><i class="fab fa-google-play"></i> Download</button>
+  </div>
+</section>
+
+
+<!-- <div class="popup active" id="popup-1">
+  <div class="content">
+    <div class="close-btn" onclick="togglePopup()">
+      <a href="/">x</a></div>
+      <form action="/" method="post">
+        <h1>Sign Up</h1>
+              <div class="input-field"><input placeholder="First Name" class="validate" name = "fname"></div>
+              <div class="input-field"><input placeholder="Last Name" class="validate" name = "lname"></div>
+              <div class="input-field"><input  type="email" placeholder="Email" class="validate" name="email"></div>
+              <div class="input-field"><input type="password" placeholder="Password" class="validate" name = "password"></div>
+              <div class="input-field"><input type="password" placeholder="Re-enter Password" class="validate" name = "repassword"></div>
+              <div class="input-field"><input placeholder="Aadhar Number" class="validate" name = "aadhar"></div>
+              <button class="second-button">Sign up</button>
+      </form>
+  </div>
+</div> -->
+
+
+
+<script type="text/javascript">
+  function togglePopup() {
+    document.getElementById("popup-1")
+      .classList.toggle("active");
+  }
+
+  $num = $('.my-card').length;
+  $even = $num / 2;
+  $odd = ($num + 1) / 2;
+
+  if ($num % 2 == 0) {
+    $('.my-card:nth-child(' + $even + ')').addClass('active');
+    $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+    $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+  } else {
+    $('.my-card:nth-child(' + $odd + ')').addClass('active');
+    $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
+    $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
+  }
+
+  $('.my-card').click(function() {
+    $slide = $('.active').width();
+    console.log($('.active').position().left);
+
+    if ($(this).hasClass('next')) {
+      $('.card-carousel').stop(false, true).animate({
+        left: '-=' + $slide
+      });
+    } else if ($(this).hasClass('prev')) {
+      $('.card-carousel').stop(false, true).animate({
+        left: '+=' + $slide
+      });
+    }
+
+    $(this).removeClass('prev next');
+    $(this).siblings().removeClass('prev active next');
+
+    $(this).addClass('active');
+    $(this).prev().addClass('prev');
+    $(this).next().addClass('next');
+  });
+
+
+  // Keyboard nav
+  $('html body').keydown(function(e) {
+    if (e.keyCode == 37) { // left
+      $('.active').prev().trigger('click');
+    } else if (e.keyCode == 39) { // right
+      $('.active').next().trigger('click');
+    }
+  });
+</script>
+
+<%- include("partials/footer"); -%>

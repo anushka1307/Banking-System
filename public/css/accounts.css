@@ -1,0 +1,46 @@
+.account-details {
+  background-color: #FFF;
+  margin-top: 10%;
+  margin-left: 15%;
+  margin-bottom: 12%;
+  height: 800px;
+  width: 900px;
+}
+.details {
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.1);
+}
+.inside-div {
+  width: 100%;
+  overflow: hidden;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.first-div {
+  width: 450px;
+  float: left;
+  margin-left: 100px;
+}
+
+#accounts-tab {
+	margin-top: 6%;
+	margin-bottom: 60px;
+}
+
+#customers tr:hover {background-color: #ddd;}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #AAAAAA;
+  color: white;
+	padding: 20px;
+}
+#customers {
+	background-color: #FFF;
+	margin-left: 21%;
+}

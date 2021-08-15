@@ -1,0 +1,93 @@
+<%- include("partials/header1"); -%>
+<link rel="stylesheet" href="/css/loan.css">
+<div class="">
+  <form>
+
+    <fieldset>
+      <label for="firstName">Applicant Name</label>
+      <input type="text" name="name" id="firstName">
+    </fieldset>
+    <fieldset>
+      <legend>Title</legend>
+      <input type="radio" id="radio1" name="radios" checked>
+      <label for="radio1">Mr.</label><br>
+      <input type="radio" id="radio2" name="radios">
+      <label for="radio2">Ms.</label><br>
+      <input type="radio" id="radio3" name="radios">
+      <label for="radio3">Mrs.</label>
+    </fieldset>
+
+    <fieldset>
+      <label for="textarea">Bio</label>
+      <textarea name="textarea" id="textarea" placeholder="Tell us about yourself..."></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Purpose of loan</legend>
+      <input type="radio" id="radio1" name="radios" checked>
+      <label for="radio1">Employed</label><br>
+      <input type="radio" id="radio2" name="radios">
+      <label for="radio2">Self Employed</label><br>
+      <input type="radio" id="radio3" name="radios">
+      <label for="radio3">Retired</label>
+      <input type="radio" id="radio4" name="radios">
+      <label for="radio4">Housewife</label>
+      <input type="radio" id="radio5" name="radios">
+      <label for="radio5">Student</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Purpose of loan</legend>
+      <input type="radio" id="radio1" name="radios" checked>
+      <label for="radio1">House renovation</label><br>
+      <input type="radio" id="radio2" name="radios">
+      <label for="radio2">Marriage</label><br>
+      <input type="radio" id="radio3" name="radios">
+      <label for="radio3">Travel</label>
+      <input type="radio" id="radio4" name="radios">
+      <label for="radio4">Education</label>
+      <input type="radio" id="radio5" name="radios">
+      <label for="radio5">Business expansion</label>
+    </fieldset>
+
+    <!-- <fieldset>
+      <label for="select-choice">Transformers fan?</label>
+      <select name="select-choice" id="select-choice">
+        <option value="Choice 1">- - select one - -</option>
+        <option value="Choice 2">Yes!</option>
+        <option value="Choice 3">They're kinda cool, yeah.</option>
+        <option value="Choice 4">Meh... not really.</option>
+        <option value="Choice 5">What's Transformers?</option>
+      </select>
+    </fieldset> -->
+
+    <fieldset>
+      <legend>Bank Details</legend>
+      <label for="monthSalary">Monthly Salary</label>
+      <input type="text" name="monthSalary" value="" placeholder="">
+      <label for="accNumber">Account Number</label>
+      <input type="text" name="accNumber" value="" placeholder="In months">
+      <label for="bankName">Bank Name</label>
+      <input type="text" name="bankName" value="" placeholder="In months">
+    </fieldset>
+
+    <fieldset>
+      <legend>Loan Details</legend>
+      <label for="loanAmount">Amount</label>
+      <input type="text" name="loanAmount" value="" placeholder="">
+      <label for="loanTenure">Loan Tenure</label>
+      <input type="text" name="loanTenure" value="" placeholder="In months">
+    </fieldset>
+
+    <button>Submit</button>
+  </form>
+</div>
+
+
+
+
+<script type="text/javascript">
+  $("button").click(function(e) {
+  e.preventDefault();
+});
+</script>

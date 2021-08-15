@@ -1,0 +1,171 @@
+<%- include("partials/header1"); -%>
+<div class="whole" id="blur">
+<section id="startingSlideshow">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h1><%= greetings %></h1>
+      </div>
+        <div class="carousel-item">
+          <h1>dfdjfdjfd</h1>
+
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 facility-box transfer">
+      <div class="block">
+        <i class="fas fa-comments-dollar fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first" name="transferMoney" onclick="togglePopup1()">Transfer</button>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 facility-box view">
+      <div class="block">
+        <i class="fas fa-money-check-alt fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first trans" name="viewCustomer" onclick="togglePopup2()">Deposits</button>
+      </div>
+    </div>
+    <div class="col-md-4 facility-box accounts">
+      <div class="block">
+        <i class="fab fa-cc-visa fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first" name="button" onclick="togglePopup3()">Credit Card</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 facility-box transfer">
+      <div class="block">
+        <i class="fas fa-comments-dollar fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first" name="transferMoney"><a href="/loan">Loan</a></button>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 facility-box view">
+      <div class="block">
+        <i class="fas fa-file-invoice-dollar fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first trans" name="viewCustomer" onclick="togglePopup4()">Exchange Rates</button>
+      </div>
+    </div>
+    <div class="col-md-4 facility-box accounts">
+      <div class="block">
+        <i class="fas fa-users fa-4x icon"></i>
+        <br>
+        <button type="button" class="btn first" name="button"><a href="/accounts">Contact</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
+
+
+<div class="popup" id="popup-1">
+  <div class="content transfer-money">
+    <div class="close-btn" onclick="togglePopup1()">
+      ×</div>
+    <h2>Balance</h2>
+    <form class="" action="/home" method="post">
+      <div class="input-field"><input name="accountNumber" placeholder="Account Number" class="validate"></div>
+      <div class="input-field"><input name="amount" placeholder="Amount" class="validate"></div>
+      <button class="second-button">Transfer</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="popup" id="popup-2">
+  <div class="content deposit">
+    <div class="close-btn" onclick="togglePopup2()">
+      ×</div>
+    <h2>Balance</h2>
+    <div class="input-field"><input placeholder="Amount" class="validate"></div>
+    <div class="input-field"><input placeholder="Time Period" class="validate"></div>
+    <div class="input-field"><input placeholder="Email" class="validate"></div>
+    <div class="input-field"><input placeholder="Password" class="validate"></div>
+    <div class="input-field"><input placeholder="Re-enter Password" class="validate"></div>
+    <div class="input-field"><input placeholder="Aadhar Number" class="validate"></div>
+    <button class="second-button">Submit</button>
+  </div>
+</div>
+
+
+<div class="popup" id="popup-3">
+  <div class="content credit-card">
+    <div class="close-btn" onclick="togglePopup3()">
+      ×</div>
+    <h2>Apply for Credit Card</h2>
+    <div class="input-field"><input placeholder="First Name" class="validate"></div>
+    <div class="input-field"><input placeholder="Last Name" class="validate"></div>
+    <div class="input-field"><input placeholder="Account Number" class="validate"></div>
+    <div class="input-field"><input placeholder="Annual Income" class="validate"></div>
+    <button class="second-button">Submit</button>
+  </div>
+</div>
+
+<div class="popup" id="popup-4">
+  <div class="content exchange">
+    <div class="close-btn" onclick="togglePopup3()">
+      ×</div>
+    <h2>Currency Rates</h2>
+    <form class="" action="/home" method="post">
+      <div class="input-field"><input name="from" placeholder="From" class="validate"></div>
+      <div class="input-field"><input name="to" placeholder="To" class="validate"></div>
+      <!-- <div class="input-field"><input name="to" class="validate" readonly><%=rate%></div> -->
+      <p><%=rate%></p>
+      <button class="second-button">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function toggle() {
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+  }
+  function togglePopup1() {
+    document.getElementById("popup-1")
+      .classList.toggle("active");
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+  }
+
+  function togglePopup2() {
+    document.getElementById("popup-2")
+      .classList.toggle("active");
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+  }
+
+  function togglePopup3() {
+    document.getElementById("popup-3")
+      .classList.toggle("active");
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+  }
+  function togglePopup4() {
+    document.getElementById("popup-4")
+      .classList.toggle("active");
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+  }
+</script>
+
+<%- include("partials/footer"); -%>
